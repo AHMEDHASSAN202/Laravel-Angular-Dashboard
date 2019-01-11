@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.errorMsg {
+    color: red;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.active {
+    color: #284E91 !important;
+    text-decoration: none;
+}
+
+.hover {
+    transition: color 5.s ease-in-out;
+}
+
+.hover:not(.active):hover {
+    color: #284E91 !important;
+}
+
+.wrapper-content {
+    padding: 0 20px;
+}
+
+.title-page {
+    margin: 10px 0;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #6c757d!important;
+    text-transform: uppercase!important;
+    position: relative;
+}
+
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateX(-100%)
+}

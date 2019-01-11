@@ -1,0 +1,75 @@
+<nav class="sidebar">
+    <div class="user-info">
+        <div class="user-info-container">
+            <img [src]="profile.avatar">
+            <div class="email-button">
+                <div>
+                    <div class="user-name">{{ profile.name }}</div>
+                    <span>{{  profile.email }}</span>
+                </div>
+                <span>
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>dialpad</mat-icon>
+                            <span>Redial</span>
+                </button>
+                <button mat-menu-item disabled>
+                            <mat-icon>voicemail</mat-icon>
+                            <span>Check voicemail</span>
+                        </button>
+                <button mat-menu-item>
+                            <mat-icon>notifications_off</mat-icon>
+                            <span>Disable alerts</span>
+                        </button>
+                </mat-menu>
+                </span>
+            </div>
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a routerLinkActive="active" routerLink="/dashboard/home" class="hover">
+                <i class="material-icons">home</i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a routerLinkActive="active" routerLink="/dashboard/users" class="hover">
+                <i class="material-icons">group</i>
+                <span>Users</span>
+            </a>
+        </li>
+        <li>
+            <a class="hover">
+                <i class="material-icons">home</i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <li>
+            <a (click)="panel_toggle()" class="child-panel hover">
+                <span class="name-panel">
+                    <i class="material-icons">home</i>
+                    <span>Settings</span>
+                </span>
+                <span class="icon-child-panel">
+                    <i class="material-icons">{{  panel_is_open ? 'remove' : 'add' }}</i>
+                </span>
+            </a>
+            <ul [@openClose]="panel_is_open ? 'open' : 'closed'">
+                <li>
+                    <a class="hover">
+                        <i class="material-icons">home</i>
+                        <span>blaa</span>
+                    </a>
+                    <a class="hover">
+                        <i class="material-icons">home</i>
+                        <span>blaa</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

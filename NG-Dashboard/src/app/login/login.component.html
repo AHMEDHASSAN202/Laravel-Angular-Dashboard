@@ -1,0 +1,34 @@
+<div class="wrapper">
+    <div class="logo">
+        <div>NG Dashboard</div>
+        <small>NGDashboard is Simple Admin panel - Material Design</small>
+    </div>
+    <div class="container-form">
+        <form [formGroup]="loginForm" (ngSubmit)="login()" autocomplete="off">
+            <div class="header-form">Sign in to start your session</div>
+            <!-- <div *ngIf="_auth.error" class="errorMsg">{{ _auth.error }}</div> -->
+            <div class="errorMsg">
+                <app-messages></app-messages>
+            </div>
+            <div class="body-form">
+                <div class="form-control">
+                    <mat-form-field>
+                        <input matInput placeholder="Email" formControlName="email" name="email" required>
+                        <mat-error *ngIf="loginForm.get('email').invalid">{{ getErrorMessageEmail() }}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-control">
+                    <mat-form-field>
+                        <input matInput placeholder="Password" formControlName="password" name="password" type="password" required>
+                        <mat-error *ngIf="loginForm.get('password').invalid">{{ getErrorMessagePassword() }}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-control">
+                    <mat-checkbox [(ngModel)]="checked" [ngModelOptions]="{standalone: true}">Remember Me</mat-checkbox>
+                </div>
+                <button [disabled]="!loginForm.valid" type="submit" mat-raised-button color="primary">sign in</button>
+            </div>
+            <div class="footer-form"></div>
+        </form>
+    </div>
+</div>

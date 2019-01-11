@@ -1,0 +1,14 @@
+.wrapper {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-top: 70px;
+    background: #ffffff;
+    overflow: hidden
+}
+
+.wrapper .wrapper-sidebar {
+    padding-top: 64px
+}
